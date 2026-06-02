@@ -1,10 +1,9 @@
 services:
   gpt-session-converter:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: gptsession2cpaandsub2api:latest
-    container_name: gptsession2cpaandsub2api
+    image: ghcr.io/kevinye13/gptsession2cpaandsub2api:latest
+    container_name: 20035-gptsession-converter
     restart: unless-stopped
+    environment:
+      TZ: Asia/Shanghai
     ports:
       - "${APP_PORT:-20035}:80"

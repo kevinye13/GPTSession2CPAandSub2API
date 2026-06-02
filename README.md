@@ -68,20 +68,27 @@ docs/index.html
 
 ## Docker Compose 部署
 
-默认映射到宿主机 `20035` 端口：
+默认从 GHCR 拉取镜像 `ghcr.io/kevinye13/gptsession2cpaandsub2api:latest`，并映射到宿主机 `20035` 端口：
 
 ```bash
-docker compose up -d --build
+docker compose pull
+docker compose up -d
 ```
 
 如果要改端口，例如映射到 `30080`：
 
 ```bash
-APP_PORT=30080 docker compose up -d --build
+APP_PORT=30080 docker compose up -d
 ```
 
 部署后访问：
 
 ```text
 http://服务器IP:20035/
+```
+
+如果 GHCR 镜像尚未公开，需要先在服务器登录：
+
+```bash
+docker login ghcr.io
 ```
