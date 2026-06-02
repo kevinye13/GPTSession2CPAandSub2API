@@ -65,3 +65,23 @@ docs/index.html
 ```
 
 所有解析和转换都在浏览器本地完成，不上传 token，不写入本地存储。
+
+## Docker Compose 部署
+
+默认映射到宿主机 `20035` 端口：
+
+```bash
+docker compose up -d --build
+```
+
+如果要改端口，例如映射到 `30080`：
+
+```bash
+APP_PORT=30080 docker compose up -d --build
+```
+
+部署后访问：
+
+```text
+http://服务器IP:20035/
+```

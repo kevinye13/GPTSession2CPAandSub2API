@@ -1,0 +1,10 @@
+services:
+  gpt-session-converter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gptsession2cpaandsub2api:latest
+    container_name: gptsession2cpaandsub2api
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-20035}:80"
